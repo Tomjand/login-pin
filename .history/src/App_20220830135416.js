@@ -25,10 +25,9 @@ function App() {
   const Log_id_client = ()=>{
     console.log("testtttt");
     LiveChat.createDetailsWidget().then(function (widget) {
-      widget.on("customer_profile", data => {
-        console.log("DATAAAA : ",data)
-    //chat_id = data.chat.chat_id;
-  });
+      widget.on("customer_profile", data => {console.log(data),
+    chat_id = data.chat.chat_id;
+      });
     });
   }
 

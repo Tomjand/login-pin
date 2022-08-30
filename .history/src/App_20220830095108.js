@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-import * as LiveChat from "@livechat/agent-app-sdk";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   RadioButton,
@@ -24,22 +23,13 @@ function App() {
 
   const Log_id_client = ()=>{
     console.log("testtttt");
-    LiveChat.createDetailsWidget().then(function (widget) {
-      widget.on("customer_profile", data => {
-        console.log("DATAAAA : ",data)
-    //chat_id = data.chat.chat_id;
-  });
-    });
   }
 
 Log_id_client();
 
-
-
   return (
     <div className="App">
       <h1>test</h1>
-      
       <Form
         labelText="Settings"
         helperText="Use form layout to arrange fields within a form using standard spacing. We recomme stacking fields vertically for easier scanning and faster completion, but you can also arrange them vertically."

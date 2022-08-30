@@ -26,9 +26,9 @@ function App() {
     console.log("testtttt");
     LiveChat.createDetailsWidget().then(function (widget) {
       widget.on("customer_profile", data => {
-        console.log("DATAAAA : ",data)
+        console.log(data),
     //chat_id = data.chat.chat_id;
-  });
+  })
     });
   }
 

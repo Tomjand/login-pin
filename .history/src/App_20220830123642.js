@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import * as LiveChat from "@livechat/agent-app-sdk";
+import { LiveChatWidget, EventHandlerPayload } from "@livechat/widget-react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import {
   RadioButton,
@@ -22,19 +22,21 @@ const emailValidation = {
 
 function App() {
 
-  const Log_id_client = ()=>{
-    console.log("testtttt");
-    LiveChat.createDetailsWidget().then(function (widget) {
-      widget.on("customer_profile", data => {
-        console.log("DATAAAA : ",data)
-    //chat_id = data.chat.chat_id;
-  });
-    });
-  }
+  // const Log_id_client = ()=>{
+  //   console.log("testtttt");
+  //   LiveChat.createDetailsWidget().then(function (widget) {
+  //     widget.on("customer_profile", data => {
+  //       console.log(data),
+  //         chat_id = data.chat.chat_id;
+  //     });
+  //   });
+  // }
 
-Log_id_client();
+// Log_id_client();
 
-
+function handleNewEvent(event: EventHandlerPayload<"onNewEvent">) {
+  console.log("LiveChatWidget.onNewEvent", event);
+}
 
   return (
     <div className="App">
